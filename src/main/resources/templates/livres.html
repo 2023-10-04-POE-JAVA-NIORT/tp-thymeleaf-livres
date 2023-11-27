@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Mes livres</h1>
+
+<ul>
+  <li th:each="l:${livres}"><a th:href="'details?id='+${l.id}" th:text="${l.titre}"></a></li>
+</ul>
+
+<form method="POST" action="livres">
+  <label for="titre">titre:</label><input type="text" name="titre" id="titre">
+  <label for="resume">resume:</label><input type="text" name="resume" id="resume">
+
+  <input type="submit" value="Ajouter">
+</form>
+
+</body>
+</html>
